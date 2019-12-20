@@ -158,11 +158,15 @@ public class SoapUtil {
         return str.substring(start, end);
     }
 
-    public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("name", "cdaa");
-        System.out.println(getSoapAction("aa", "aasd", map));
+    public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
 
+        Service service = SoapUtil.getService(new FileInputStream(new File("./file/OrderInterfaceService.xml")));
+        System.out.println(service);
+
+        System.out.println("-------------分割线--------------------");
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("loginRequest", "cdaa");
+        System.out.println(getSoapAction("login", "http://egzosn.com", map));
     }
 
 

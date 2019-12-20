@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://k5.kingtrans.cn/services/OrderInterfaceService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://k5.kingtrans.cn/services/OrderInterfaceService" xmlns:intf="http://k5.kingtrans.cn/services/OrderInterfaceService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://jdom.org" xmlns:tns2="http://lang.java" xmlns:tns3="http://util.kingtrans.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://jdom.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://util.kingtrans.net"/>
+   <import namespace="http://lang.java"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="JDOMException">
+    <sequence>
+     <element name="cause" nillable="true" type="xsd:anyType"/>
+     <element name="message" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://util.kingtrans.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://jdom.org"/>
+   <import namespace="http://lang.java"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="InvalidDataException">
+    <sequence/>
+   </complexType>
+   <complexType name="InvalidException">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getOrderPrintLabelRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBillidBySourceidResponse">
+
+      <wsdl:part name="getBillidBySourceidReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="InvalidDataException">
+
+      <wsdl:part name="fault" type="tns3:InvalidDataException">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateOrderByBillidResponse">
+
+      <wsdl:part name="updateOrderByBillidReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateOrderResponse">
+
+      <wsdl:part name="updateOrderReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="submitOrderRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getOrderPrintLabelResponse">
+
+      <wsdl:part name="getOrderPrintLabelReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveGetBillidRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrintLabelByBillidResponse">
+
+      <wsdl:part name="getPrintLabelByBillidReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="submitOrderForecastRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBillidByCorpBillidRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPageLabelByChannelCodeResponse">
+
+      <wsdl:part name="getPageLabelByChannelCodeReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part name="dataStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createTrackResponse">
+
+      <wsdl:part name="createTrackReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBillidBySourceidRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="InvalidException">
+
+      <wsdl:part name="fault" type="tns3:InvalidException">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="submitOrderForecastResponse">
+
+      <wsdl:part name="submitOrderForecastReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTransBillidByCorpBillidResponse">
+
+      <wsdl:part name="getTransBillidByCorpBillidReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBillidByCorpBillidResponse">
+
+      <wsdl:part name="getBillidByCorpBillidReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateOrderByBillidRequest">
+
+      <wsdl:part name="dataStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="JDOMException">
+
+      <wsdl:part name="fault" type="tns1:JDOMException">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part name="loginReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchChannelResponse">
+
+      <wsdl:part name="searchChannelReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrintLabelByBillidRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateOrderRequest">
+
+      <wsdl:part name="dataStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createTrackRequest">
+
+      <wsdl:part name="dataStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveGetBillidResponse">
+
+      <wsdl:part name="retrieveGetBillidReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="submitOrderResponse">
+
+      <wsdl:part name="submitOrderReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTransBillidByCorpBillidRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchChannelRequest">
+
+      <wsdl:part name="xmlStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPageLabelByChannelCodeRequest">
+
+      <wsdl:part name="dataStr" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="OrderInterfaceService">
+
+      <wsdl:operation name="login" parameterOrder="dataStr">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateOrderByBillid" parameterOrder="dataStr">
+
+         <wsdl:input message="impl:updateOrderByBillidRequest" name="updateOrderByBillidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateOrderByBillidResponse" name="updateOrderByBillidResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchChannel" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:searchChannelRequest" name="searchChannelRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchChannelResponse" name="searchChannelResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBillidBySourceid" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:getBillidBySourceidRequest" name="getBillidBySourceidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBillidBySourceidResponse" name="getBillidBySourceidResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateOrder" parameterOrder="dataStr">
+
+         <wsdl:input message="impl:updateOrderRequest" name="updateOrderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateOrderResponse" name="updateOrderResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createTrack" parameterOrder="dataStr">
+
+         <wsdl:input message="impl:createTrackRequest" name="createTrackRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createTrackResponse" name="createTrackResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="submitOrder" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:submitOrderRequest" name="submitOrderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:submitOrderResponse" name="submitOrderResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPageLabelByChannelCode" parameterOrder="dataStr">
+
+         <wsdl:input message="impl:getPageLabelByChannelCodeRequest" name="getPageLabelByChannelCodeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPageLabelByChannelCodeResponse" name="getPageLabelByChannelCodeResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getOrderPrintLabel" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:getOrderPrintLabelRequest" name="getOrderPrintLabelRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getOrderPrintLabelResponse" name="getOrderPrintLabelResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="submitOrderForecast" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:submitOrderForecastRequest" name="submitOrderForecastRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:submitOrderForecastResponse" name="submitOrderForecastResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrintLabelByBillid" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:getPrintLabelByBillidRequest" name="getPrintLabelByBillidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrintLabelByBillidResponse" name="getPrintLabelByBillidResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTransBillidByCorpBillid" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:getTransBillidByCorpBillidRequest" name="getTransBillidByCorpBillidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTransBillidByCorpBillidResponse" name="getTransBillidByCorpBillidResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBillidByCorpBillid" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:getBillidByCorpBillidRequest" name="getBillidByCorpBillidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBillidByCorpBillidResponse" name="getBillidByCorpBillidResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveGetBillid" parameterOrder="xmlStr">
+
+         <wsdl:input message="impl:retrieveGetBillidRequest" name="retrieveGetBillidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:retrieveGetBillidResponse" name="retrieveGetBillidResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JDOMException" name="JDOMException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidDataException" name="InvalidDataException">
+
+       </wsdl:fault>
+
+         <wsdl:fault message="impl:InvalidException" name="InvalidException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="OrderInterfaceServiceSoapBinding" type="impl:OrderInterfaceService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateOrderByBillid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateOrderByBillidRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateOrderByBillidResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchChannel">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchChannelRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchChannelResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBillidBySourceid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBillidBySourceidRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBillidBySourceidResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateOrderRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateOrderResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createTrack">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createTrackRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createTrackResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="submitOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="submitOrderRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="submitOrderResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPageLabelByChannelCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPageLabelByChannelCodeRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPageLabelByChannelCodeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getOrderPrintLabel">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getOrderPrintLabelRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getOrderPrintLabelResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="submitOrderForecast">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="submitOrderForecastRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="submitOrderForecastResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrintLabelByBillid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrintLabelByBillidRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrintLabelByBillidResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTransBillidByCorpBillid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTransBillidByCorpBillidRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTransBillidByCorpBillidResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBillidByCorpBillid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBillidByCorpBillidRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBillidByCorpBillidResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveGetBillid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="retrieveGetBillidRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ws.order.webservice.kingtrans.net" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="retrieveGetBillidResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JDOMException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="JDOMException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidDataException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidDataException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+         <wsdl:fault name="InvalidException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidException" namespace="http://k5.kingtrans.cn/services/OrderInterfaceService" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="OrderInterfaceServiceService">
+
+      <wsdl:port binding="impl:OrderInterfaceServiceSoapBinding" name="OrderInterfaceService">
+
+         <wsdlsoap:address location="http://k5.kingtrans.cn/services/OrderInterfaceService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
